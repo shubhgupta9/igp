@@ -8,6 +8,10 @@ function saveDataToFile() {
 
 exports.create = (req, res) => {
   const { name, email, designation } = req.body;
+
+  // if (!name || !email || !designation) {
+  //   return res.status(400).send("Please provide all required fields.");
+  // }
   const newUser = {
     id: users.length + 1,
     name,
@@ -17,7 +21,9 @@ exports.create = (req, res) => {
 
   users.push(newUser);
 
-  // saveDataToFile();
+  saveDataToFile();
+
+  console.log(req.body);
 
   res.redirect("/");
 };
@@ -29,7 +35,7 @@ exports.renderCreateUserForm = (req, res) => {
 exports.read = (req, res) => {
   const id = +req.params.id;
   const user = users.find((p) => p.id === id);
-  res.render("layouts/list", user);
+  res.render("layouts/view", user);
 };
 
 exports.readAll = (req, res) => {
@@ -41,8 +47,9 @@ exports.update = (req, res) => {
   const id = +req.params.id;
   const userIndex = users.findIndex((p) => p.id === id);
   const updatedUser = users[userIndex];
-  users.splice(userIndex, 1, { ...user, ...req.body });
-  users.splice(userIndex, 1, updatedUser);
+  users.splice(userIndex, 1, { ...updatedUser, ...req.body });
+  saveDataToFile();
+  res.redirect("/");
 };
 
 exports.renderEditUserForm = (req, res) => {

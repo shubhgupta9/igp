@@ -29,6 +29,14 @@
       "name": "Te",
       "designation": "ceo",
       "email": "kmeus4@upenn.edu"
+    },
+    {
+      "id": 6,
+      "name": "Shubh Gupta",
+      "email": "shubh.g0279@gmail.com",
+      "designation": "wwsss",
+      "_locals": {},
+      "_method": "PUT"
     }
   ]
 }

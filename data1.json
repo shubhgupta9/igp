@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Terry",
+      "designation": "sde",
+      "email": "atuny0@sohu.com"
+    },
+    {
+      "id": 2,
+      "name": "Terr",
+      "designation": "fte",
+      "email": "hbingley1@plala.or.jp"
+    },
+    {
+      "id": 3,
+      "name": "Terr",
+      "designation": "manager",
+      "email": "rshawe2@51.la"
+    },
+    {
+      "id": 4,
+      "name": "Ter",
+      "designation": "hr",
+      "email": "yraigatt3@nature.com"
+    },
+    {
+      "id": 5,
+      "name": "Te",
+      "designation": "ceo",
+      "email": "kmeus4@upenn.edu"
+    }
+  ]
+}

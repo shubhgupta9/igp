@@ -1,0 +1,21 @@
+<h1>User List</h1>
+<ul>
+  {{#each users}}
+    <li>
+      <span>id:{{id}}</span>
+      <br>
+      <span>Name: {{name}}</span>
+      <br>
+      <span>Email: {{email}}</span>
+      <br>
+      <span>Designation: {{designation}}</span>
+      <a href="/{{id}}">View</a>
+      <br>
+        <a href="/edit/{{id}}">Edit</a>
+      <br>
+        <form method="POST" action="/delete/{{id}}">
+      <button type="submit">Delete</button>
+    </form>
+    </li>
+  {{/each}}
+</ul>

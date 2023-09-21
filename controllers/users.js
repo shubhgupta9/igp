@@ -23,8 +23,6 @@ exports.create = (req, res) => {
 
   saveDataToFile();
 
-  console.log(req.body);
-
   res.redirect("/");
 };
 
@@ -49,7 +47,7 @@ exports.update = (req, res) => {
   const updatedUser = users[userIndex];
   users.splice(userIndex, 1, { ...updatedUser, ...req.body });
   saveDataToFile();
-  res.redirect("/");
+  // res.redirect("/");
 };
 
 exports.renderEditUserForm = (req, res) => {

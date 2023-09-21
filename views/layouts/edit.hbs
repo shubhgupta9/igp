@@ -1,4 +1,4 @@
-<html>
+{{!-- <html>
 <head>
   <title>Edit User</title>
 </head>
@@ -18,5 +18,61 @@
 
     <button type="submit">Save Changes</button>
   </form>
+</body>
+</html> --}}
+
+
+<!-- edit.hbs -->
+<html>
+<head>
+  <title>Edit User</title>
+</head>
+<body>
+  <h1>Edit User</h1>
+  <form id="editForm"> <!-- Add an ID to the form -->
+    <label for="name">Username:</label>
+    <input type="text" id="name" name="name" value="{{name}}" required><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="{{email}}" required><br><br>
+
+    <label for="designation">Designation:</label>
+    <input type="text" id="designation" name="designation" value="{{designation}}" required><br><br>
+
+    <button type="submit">Save Changes</button>
+  </form>
+
+  <script>
+  const id = {{id}};
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const editForm = document.getElementById('editForm');
+
+      editForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+        const formData = new FormData(this); // Get form data
+
+        // Make an AJAX call to update the user data
+        fetch(`/editUser/${id}`, {
+          method: 'PUT',
+          body: formData,
+        })
+        .then(response => {
+          if (response.ok) {
+            // Handle success, e.g., show a success message
+            alert('User updated successfully');
+            window.location.href = '/'; // Redirect to the user list
+          } else {
+            // Handle errors, e.g., show an error message
+            alert('Failed to update user');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred while updating user');
+        });
+      });
+    });
+  </script>
 </body>
 </html>

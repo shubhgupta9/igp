@@ -18,6 +18,7 @@ server.set("views", __dirname + "/views");
 server.use(express.urlencoded({ extended: true }));
 
 server.use(methodOverride("_method"));
+server.use(express.static("public"));
 server.use(express.json());
 server.use(cors());
 server.use("/", userRouter);

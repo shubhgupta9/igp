@@ -1,6 +1,8 @@
 const fs = require("fs");
 const data1 = JSON.parse(fs.readFileSync("data1.json", "utf-8"));
 const users = data1.users;
+const multer = require("multer");
+const upload = multer();
 
 function saveDataToFile() {
   fs.writeFileSync("data1.json", JSON.stringify(data1, null, 2), "utf-8");
@@ -41,14 +43,17 @@ exports.readAll = (req, res) => {
   // res.json(users);
 };
 
-exports.update = (req, res) => {
-  const id = +req.params.id;
-  const userIndex = users.findIndex((p) => p.id === id);
-  const updatedUser = users[userIndex];
-  users.splice(userIndex, 1, { ...updatedUser, ...req.body });
-  saveDataToFile();
-  // res.redirect("/");
-};
+exports.update = [
+  upload.none(),
+  (req, res) => {
+    const id = +req.params.id;
+    const userIndex = users.findIndex((p) => p.id === id);
+    const updatedUser = users[userIndex];
+    users.splice(userIndex, 1, { ...updatedUser, ...req.body });
+    saveDataToFile();
+    // res.redirect("/");
+  },
+];
 
 exports.renderEditUserForm = (req, res) => {
   const id = +req.params.id;

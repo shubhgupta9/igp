@@ -1,7 +1,8 @@
 <h1>User List</h1>
 <ul>
   {{#each users}}
-    <li>
+    <li style="display: flex; align-items: center">
+      <div style="margin: 10px;">
       <span>id:{{id}}</span>
       <br>
       <span>Name: {{name}}</span>
@@ -9,13 +10,16 @@
       <span>Email: {{email}}</span>
       <br>
       <span>Designation: {{designation}}</span>
+      <br>
       <a href="/{{id}}">View</a>
       <br>
         <a href="/edit/{{id}}">Edit</a>
       <br>
         <form method="POST" action="/delete/{{id}}">
       <button type="submit">Delete</button>
-    </form>
+      </form>
+      </div>
+      <img src="/uploads/{{photo}}" alt="" width="150" height="150">
     </li>
   {{/each}}
 </ul>

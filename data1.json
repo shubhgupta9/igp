@@ -2,40 +2,50 @@
   "users": [
     {
       "id": 1,
-      "name": "Shubh Gupta",
+      "name": "kbcsdc",
       "designation": "sssssss",
-      "email": "shubh.g0279@gmail."
+      "email": "dsbbdeqwd@dd.com",
+      "photo": "1695372574015-3600329-download (4).jpg",
+      "_locals": {}
     },
     {
       "id": 2,
       "name": "Terry",
       "designation": "fte",
-      "email": "hbingley1@plala.or.jp"
+      "email": "hbingley1@plala.or.jp",
+      "photo": "1695372467432-131841332-download.jpg",
+      "_locals": {}
     },
     {
       "id": 3,
       "name": "Terr",
       "designation": "fte",
-      "email": "hbingley1@plala.or.jp"
+      "email": "hbingley1@plala.or.jp",
+      "photo": "1695372481408-526732803-download (1).jpg",
+      "_locals": {}
     },
     {
       "id": 4,
       "name": "Ter",
       "designation": "hr",
-      "email": "yraigatt3@nature.com"
+      "email": "yraigatt3@nature.com",
+      "photo": "1695372493704-96252605-download (2).jpg",
+      "_locals": {}
     },
     {
       "id": 5,
       "name": "Te",
       "designation": "ceo",
       "email": "kmeus4@upenn.edu",
+      "photo": "1695372507331-420113488-download (3).jpg",
       "_locals": {}
     },
     {
       "id": 6,
       "name": "Shubh Gupta",
       "email": "shubh.g0279@gmail.com",
-      "designation": "oaaaqqsaa",
+      "designation": "oaaaqq",
+      "photo": "1695372530529-991987276-Passport_size_photo.jpeg",
       "_locals": {}
     }
   ]
